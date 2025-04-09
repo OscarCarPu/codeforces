@@ -46,15 +46,31 @@ signed main(){
         }
         
         int sol = 0;
-        int sq = Math.floor(Math.sqrt(n));
+        int sq = floor(sqrt(n));
         
         for(int i=2; i<=min(k,sq); i++){
             sol+=calc(n,i);
             sol%=MOD;
         }
         
-        int I = (n-sq+2)*(n+sq+1)/2;
-        int res = 
+        int m = min(n, k);
+        int I = ((m*(m+1)/2-sq*(sq+1)/2)%MOD*m)%MOD;
+        sol = (sol+I)%MOD;
+
+        int minus = 0, plus = 0;
+        int L = sq+1;
+        while(L<=m) {
+            int val = n/L;
+            int R = min(m,n/val);
+            minus +=(R*(R+1)/2-L*(L-1)/2)%MOD*val;
+            minus%=MOD;
+            plus += (R-L+1)*val;
+            plus%=MOD;
+            L = R+1;
+        }
+
+        sol = (sol-minus+MOD)%MOD;
+        sol = (sol+plus)%MOD;
         
         
         if(k>n)sol += mulMod(n,k-n);
