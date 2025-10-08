@@ -6,15 +6,18 @@ using namespace std;
 #define vvi vector<vi>
 #define pii pair<int,int>
 
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(), (v).end()
+
+void solve() {
+    int n;
+    cin>>n;
+}
+
 signed main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-
     int t;
     cin>>t;
-    while(t--){
-        int n;
-        cin>>n;
-        
-    }
+    while(t--)solve();
 }
