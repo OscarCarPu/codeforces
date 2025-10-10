@@ -10,11 +10,17 @@ using namespace std;
 #define all(v) (v).begin(), (v).end()
 
 const int MOD = 1e9+7;
-const int INF = LLONG_MAX;
 
 void solve() {
-    int n;
-    cin>>n;
+    int x,y,z;
+    cin>>x>>y>>z;
+    bool can = true;
+    for(int bit=0;bit<64;bit++){
+        if((((x>>bit)&1)+((y>>bit)&1)+((z>>bit)&1))==2)can=false;
+    }
+    if(can)cout<<"YES\n";
+    else cout<<"NO\n";
+
 }
 
 signed main(){

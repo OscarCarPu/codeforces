@@ -10,11 +10,17 @@ using namespace std;
 #define all(v) (v).begin(), (v).end()
 
 const int MOD = 1e9+7;
-const int INF = LLONG_MAX;
 
 void solve() {
     int n;
     cin>>n;
+    set<int> s;
+    while(n--){
+        int x;
+        cin>>x;
+        s.insert(x);
+    }
+    cout<<sz(s)<<"\n";
 }
 
 signed main(){
